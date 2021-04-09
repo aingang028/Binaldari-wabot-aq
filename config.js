@@ -10,9 +10,18 @@ global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
   'https://api.xteam.xyz': '833f655ae5e773e9'
 }
+}
+
+global.APIKeys = { // APIKey Here
+
+  // 'https://website': 'apikey'
+
+  'https://api.xteam.xyz': 'd90a9e986e18778b'
+
+}
 
 // Sticker WM
-global.packname = 'kamu bau momok'
+global.packname = 'semoga bahagia'
 global.author = 'Binaldari wabot-aq'
 
 global.multiplier = 69 // The higher, The harder levelup
