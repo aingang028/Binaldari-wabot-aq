@@ -4,6 +4,4 @@ node_modules
 database.json
 *_database.json
 tmp
-credentials.json
-token.json
-config.js
+package-lock.json
