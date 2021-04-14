@@ -46,14 +46,14 @@ module.exports = {
         let chat
         if (chat = global.DATABASE._data.chats[m.chat]) {
           if (!'isBanned' in chat) chat.isBanned = false
-          if (!'welcome' in chat) chat.welcome = true
+          if (!'welcome' in chat) chat.welcome = false
           if (!'sWelcome' in chat) chat.sWelcome = ''
           if (!'sBye' in chat) chat.sBye = ''
           if (!'delete' in chat) chat.delete = true
           if (!'antiLink' in chat) chat.antiLink = false
         } else global.DATABASE._data.chats[m.chat] = {
           isBanned: false,
-          welcome: true,
+          welcome: false,
           sWelcome: '',
           sBye: '',
           delete: true,
@@ -135,11 +135,11 @@ module.exports = {
             continue
           }
           if (plugin.rowner && !isROwner) { // Real Owner
-            fail('kapten Ang', m, this)
+            fail('rowner', m, this)
             continue
           }
           if (plugin.owner && !isOwner) { // Number Owner
-            fail('6289508963104', m, this)
+            fail('owner', m, this)
             continue
           }
           if (plugin.mods && !isMods) { // Moderator
