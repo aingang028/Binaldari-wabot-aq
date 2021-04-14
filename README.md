@@ -1,4 +1,4 @@
-# Drawl Nag
+# Aing Ang
 Simple WhatsApp Bot
 
 ### FOR TERMUX USER
