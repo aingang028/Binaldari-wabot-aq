@@ -15,10 +15,6 @@ CFonts.say(`'${package.name}' By @${package.author.name || package.author}`, {
   gradient: ['red', 'magenta']
 })
 
-/**
- * Start a js file
- * @param {String} file `path/to/file`
- */
 function start(file) {
   let args = [path.join(__dirname, file), ...process.argv.slice(2)]
   CFonts.say([process.argv[0], ...args].join(' '), {
@@ -29,7 +25,7 @@ function start(file) {
   let p = spawn(process.argv[0], args, {
     stdio: ['inherit', 'inherit', 'inherit', 'ipc']
   })
-  p.on('message', data => {
+  .on('message', data => {
     console.log('[RECEIVED]', data)
     switch (data) {
       case 'reset':
@@ -41,12 +37,11 @@ function start(file) {
         break
     }
   })
-  p.on('exit', code => {
-    console.error('Exited with code:', code)
-    if (code === 0) return
+  .on('error', e => {
+    console.error(e)
     fs.watchFile(args[0], () => {
+      start()
       fs.unwatchFile(args[0])
-      start(file)
     })
   })
   // console.log(p)
